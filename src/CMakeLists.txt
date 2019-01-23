@@ -1,2 +1,3 @@
 
 ADD_SUBDIRECTORY(fetchip)
+ADD_SUBDIRECTORY(getnetinfo)
