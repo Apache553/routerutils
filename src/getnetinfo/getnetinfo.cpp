@@ -45,11 +45,11 @@ struct PrefixDataField : public DataFieldBase {
         in6_addr inet6;
     } addr;
     virtual std::string to_string() override {
-        char addr[INET6_ADDRSTRLEN];
-        if ( inet_ntop ( af,&addr,addr,INET6_ADDRSTRLEN ) == NULL ) {
+        char addrbuf[INET6_ADDRSTRLEN];
+        if ( inet_ntop ( af,&addr,addrbuf,INET6_ADDRSTRLEN ) == NULL ) {
             return std::string ( "[NOT A VALID PREFIX]" );
         }
-        return std::string ( addr )+"/"+std::to_string ( mask );
+        return std::string ( addrbuf )+"/"+std::to_string ( mask );
     }
 };
 
