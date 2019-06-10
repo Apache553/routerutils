@@ -292,6 +292,8 @@ int main(int argc, char **argv) {
         std::cerr << "unexpected error\n";
         exit(1);
     }
+    
+    mnl_socket_close(nl);
 
     //     for (auto &i : neighbors) {
     //         char out[INET6_ADDRSTRLEN];
